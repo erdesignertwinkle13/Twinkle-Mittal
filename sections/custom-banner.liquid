@@ -1,0 +1,67 @@
+<section class="main banner">
+  <div class="banner-row hide">
+    <img src="{{section.settings.banner_image | image_url}}" width="" height="" alt="banner image"class="banner-image">
+  </div>
+  <div class="row  banner-row-two">
+    {% comment %}
+      left side
+    {% endcomment %}
+    <div class="banner-col banner-content">
+        <h1> {{ section.settings.heading }}</h1>
+        <p>{{ section.settings.subtext }}</p>
+        <a href="{{ section.settings.button_link }}" class="shop-now-btn">{{ section.settings.button_text }} <span>→</span></a>
+    </div>
+    {% comment %}
+      Right side
+    {% endcomment %}
+    <div class="banner-col banner-col-image">
+         <img src="{{section.settings.side_image | image_url}}" width="" height="" alt="Side image">
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Custom Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
+    {
+     "type": "text",
+     "id": "heading",
+    "label": "Heading",
+    "default":"Hello"
+    },
+    {
+     "type": "textarea",
+     "id": "subtext",
+    "label": "Paragraph  Text",
+    "default":"Hello world"
+    },
+    {
+     "type": "text",
+     "id": "button_text",
+    "label": "Button  Text",
+    "default":"Shop Now"
+    },
+    {
+     "type": "url",
+     "id": "button_link",
+    "label": "Button Link"
+
+    },
+    {
+      "type": "image_picker",
+      "id": "side_image",
+      "label": "Side Image"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner"
+    }
+  ]
+}
+{% endschema %}
